@@ -1,0 +1,111 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+//Marlon_sijnesael
+//This script manages the color of the pointlights used in an astroid inspired game.
+
+
+public class Lights : MonoBehaviour
+{
+
+    public float duration;
+    
+    public float t;
+    public float intensity;
+    public float timeLeft = 5.0f;
+    public bool change;
+
+    public BoxCollider2D boxColliderComponent;
+    public Slider healthBarSlider;  
+    public Color color1;
+    public Light lt;
+    public Color color0;
+    public Image _This;
+
+    private SpriteRenderer head;
+
+
+    void Start()
+    {
+        
+        color1 = Color.white;
+    }
+
+    void Update()
+    {
+        print(healthBarSlider.value);
+        print(boxColliderComponent.enabled);
+        t = Mathf.PingPong(Time.time, duration) / duration;
+        ShieldOn();
+        GameObject.Find("headpoint").GetComponent<SpriteRenderer>().color = color1;
+
+    }
+
+
+
+    public void OnTriggerEnter2D(Collider2D boom){
+        //checks for light component. shield becomes color
+        Light boomLt = boom.gameObject.GetComponent(typeof(Light)) as Light;
+
+        if (boom.gameObject.tag == "powerUp"){
+            print("powered up!");
+            color1 = new Color(boomLt.color.r, boomLt.color.g, boomLt.color.b, 255);
+            
+            //healthBarSlider.maxValue += 10;
+            _This.color = color1; 
+            Destroy(boom.gameObject);
+            
+
+        }
+    }
+
+
+    void ShieldOn(){
+        
+        if (Input.GetKey(KeyCode.Space)){
+            if (timeLeft > 0){
+                timeLeft -= Time.deltaTime;
+                
+                boxColliderComponent.enabled = false;
+                ChangeLight();
+                healthBarSlider.value -= 0.011f;
+
+            }
+            else{
+                boxColliderComponent.enabled = true;
+                lt.intensity = 0;
+            }
+        }
+        else{
+            boxColliderComponent.enabled = true;
+            lt.intensity = 0;
+            timeLeft = 2.5f;
+            if (healthBarSlider.value < 1){
+                healthBarSlider.value += 0.011f;
+            }
+        }
+    }
+    
+    void ChangeLight(){
+        //makes light grow bigger
+        if (lt.intensity < 5.0f){
+            lt.intensity += 0.05f;
+        }
+
+        //makes lights fluctuate
+        if (lt.color != color1){
+            lt.color = Color.Lerp(lt.color, color1, t);
+        }
+        if (lt.color != color0){
+
+            lt.color = Color.Lerp(lt.color, color1, t);
+        }
+    }
+
+
+
+}
+
+
