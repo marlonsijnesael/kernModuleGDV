@@ -27,13 +27,13 @@ public class Lights : MonoBehaviour
     private SpriteRenderer head;
 
 
-    void Start()
+   private void Start()
     {
         
         color1 = Color.white;
     }
 
-    void Update()
+    private void Update()
     {
         print(healthBarSlider.value);
         print(boxColliderComponent.enabled);
@@ -62,7 +62,7 @@ public class Lights : MonoBehaviour
     }
 
 
-    void ShieldOn(){
+    private void ShieldOn(){
         
         if (Input.GetKey(KeyCode.Space)){
             if (timeLeft > 0){
@@ -88,7 +88,7 @@ public class Lights : MonoBehaviour
         }
     }
     
-    void ChangeLight(){
+    public void ChangeLight(){
         //makes light grow bigger
         if (lt.intensity < 5.0f){
             lt.intensity += 0.05f;
