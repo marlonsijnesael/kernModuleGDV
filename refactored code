@@ -7,8 +7,7 @@ using UnityEngine.UI;
 //This script manages the color of the pointlights used in an astroid inspired game.
 
 
-public class Lights : MonoBehaviour
-{
+public class Lights : MonoBehaviour{
 
     public float duration;
     
@@ -27,14 +26,12 @@ public class Lights : MonoBehaviour
     private SpriteRenderer head;
 
 
-   private void Start()
-    {
+   private void Start() {
         
         color1 = Color.white;
     }
 
-    private void Update()
-    {
+    private void Update()  {
         print(healthBarSlider.value);
         print(boxColliderComponent.enabled);
         t = Mathf.PingPong(Time.time, duration) / duration;
