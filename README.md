@@ -15,6 +15,7 @@ Starting to think about technical obstacles and start with activity diagram.
 * **week 4:**
 prototyping and working on basic mechanics of the game (menu's, UI etc)
 start at making a grid system which will display a button when hovered upon. The function of this button should be different depending on the state of the tile (either built-up or not/ buildable or not)
+Identifying the required classes and behaviour
 
 * **week 5:**
  Finish working on basic mechanics of the game.
