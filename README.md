@@ -30,5 +30,10 @@ Identifying the required classes and behaviour
   if there's time: Playtests
   Bug fixes / improvements
  
-
+# learning goals and targets
+By working on this game I hope toto gain or improve the following skills:
+* Writing structured and more modular code
+* Gain a better understandig of polymorphism
+* Using events and delegates to keep code as independent as possible
+* Working in a more structured fashion in order to keep my code maintainable
 
