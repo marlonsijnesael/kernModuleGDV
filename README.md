@@ -1,9 +1,9 @@
 # kernModuleGDV
   Marlon Sijnesael
   Kernmodule Game Development: blok 1
-# all deliverables can be found in the folder called deliverables
-Youtube link: https://youtu.be/rgcicRJarqg
-# Concept: Scum City
+# the complete unity project can be found here: 
+https://marlonsijnesael-2.stackstorage.com/s/Y87Xb7OVBju1wpx
+# Concept: Scum here
   My concept consist of a parody of Sim city, combined with elements of DungeonKeeper. Your goal is to build a large city, just like in sim   city. But instead of keeping the people satisfied, you need to maintain an as low as possible satisfaction rate, without killing the  citizens.
 
 # Planning and technical plans
